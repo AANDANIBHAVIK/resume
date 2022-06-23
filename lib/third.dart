@@ -16,26 +16,31 @@ class _thirdState extends State<third> {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, '/second', arguments: m2);
-                Image.asset("assets/img/1i.jpg");
-              }, child: Text("FORMATE 1")),
-              SizedBox(height: 10,),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(onTap: (){
+                  Navigator.pushNamed(context, '/second', arguments: m2);
+                },
+                  child: Image.asset("assets/img/1i.jpg"),
+                ),
+                SizedBox(height: 15,),
 
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, '/fourth', arguments: m2);
-                Image.asset("assets/img/2i.jpg");
-              }, child: Text("FORMATE 2")),
-              SizedBox(height: 10,),
+                GestureDetector(onTap: (){
+                  Navigator.pushNamed(context, '/fourth', arguments: m2);
+                },
+                  child: Image.asset("assets/img/2i.jpg"),
+                ),
+                SizedBox(height: 15,),
 
-              ElevatedButton(onPressed: (){
-                Navigator.pushNamed(context, '/five', arguments: m2);
-                Image.asset("assets/img/3i.jpg");
-              }, child: Text("FORMATE 3")),
-            ],
+                GestureDetector(onTap: (){
+                  Navigator.pushNamed(context, '/five', arguments: m2);
+                },
+                child: Image.asset("assets/img/3i.jpg"),
+                ),
+              ],
+            ),
           ),
         ),
       ),
